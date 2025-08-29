@@ -43,113 +43,6 @@
             overflow-x: hidden;
         }
 
-        /* Background Effects */
-        .parallax-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            background: linear-gradient(45deg, #080808, #0f0f1f, #1a0828);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .background-effects {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .bubble {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 
-                0 0 10px rgba(8, 253, 216, 0.2),
-                0 0 20px rgba(255, 77, 141, 0.2),
-                inset 0 0 15px rgba(255, 255, 255, 0.3);
-            animation: float linear infinite;
-            opacity: 0.7;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) scale(0);
-            }
-            100% {
-                transform: translateY(-100px) scale(1);
-            }
-        }
-
-        .floating-element {
-            position: absolute;
-            opacity: 0.1;
-            animation: drift linear infinite;
-        }
-
-        .floating-element.circle {
-            border-radius: 50%;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-        }
-
-        .floating-element.square {
-            background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
-            transform: rotate(45deg);
-        }
-
-        .floating-element.triangle {
-            width: 0;
-            height: 0;
-            border-left: 15px solid transparent;
-            border-right: 15px solid transparent;
-            border-bottom: 30px solid var(--secondary-color);
-            background: transparent;
-        }
-
-        @keyframes drift {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-            }
-        }
-
-        /* Content should have a background to be readable */
-        #about, #rooms, #branches, #contact, footer {
-            position: relative;
-            background: rgba(8, 8, 8, 0.85);
-        }
-
-        #about::before, #rooms::before, #branches::before, #contact::before, footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: inherit;
-            z-index: -1;
-        }
-
-        /* Header section doesn't need the overlay since it has video */
-        #header {
-            position: relative;
-            z-index: 1;
-        }
-
         .container {
             padding: 2rem 10%;
             max-width: 1400px;
@@ -267,6 +160,12 @@
             color: transparent;
             line-height: 1.2;
             animation: gradientShift 5s infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .header-text p {
@@ -991,10 +890,6 @@
 </head>
 
 <body>
-    <!-- Background Elements -->
-    <div class="parallax-bg"></div>
-    <div class="background-effects" id="background-effects"></div>
-
     <!-- Header Section with Video Background -->
     <div id="header">
         <video autoplay muted loop class="header-video">
@@ -1089,7 +984,7 @@
             <div class="rooms-slider">
                 <div class="slide-container" id="slide-container">
                     <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmVdcm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Single Occupancy Room">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmVkcm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Single Occupancy Room">
                         <div class="slide-overlay">
                             <div class="slide-content">
                                 <h3>Single Occupancy Room</h3>
@@ -1247,25 +1142,10 @@
                         
                         <div class="form-group">
                             <label for="branch">Preferred Branch</label>
-                            <select id="branch" name="Branch" style="
-                                background: rgba(255, 255, 255, 0.15);
-                                border: 1px solid #ff4d8d;
-                                color: #08fdd8;
-                                padding: 0.8rem 1rem;
-                                border-radius: 5px;
-                                font-family: 'Poppins', sans-serif;
-                                width: 100%;
-                                transition: all 0.3s ease;
-                                cursor: pointer;
-                                appearance: none;
-                                background-image: url('data:image/svg+xml;utf8,<svg fill=\'%2308fdd8\' height=\'24\' viewBox=\'0 0 24 24\' width=\'24\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M7 10l5 5 5-5z\'/></svg>');
-                                background-repeat: no-repeat;
-                                background-position: right 10px center;
-                                background-size: 16px;
-                            ">
-                                <option value="" style="background: #080808; color: #08fdd8;">Select a branch</option>
-                                <option value="Sector 31" style="background: #080808; color: #08fdd8;">Sector 31</option>
-                                <option value="Sushant Lok-1" style="background: #080808; color: #08fdd8;">Sushant Lok-1</option>
+                            <select id="branch" name="Branch">
+                                <option value="">Select a branch</option>
+                                <option value="Sector 31">Sector 31</option>
+                                <option value="Sushant Lok-1">Sushant Lok-1</option>
                             </select>
                         </div>
                         
@@ -1331,145 +1211,6 @@
 
     <!-- JavaScript -->
     <script>
-        // Create background effects
-        document.addEventListener('DOMContentLoaded', function() {
-            createBackgroundEffects();
-            initRoomSlider();
-            initChatbot();
-        });
-
-        function createBackgroundEffects() {
-            const container = document.getElementById('background-effects');
-            
-            // Create bubbles
-            for (let i = 0; i < 20; i++) {
-                const bubble = document.createElement('div');
-                bubble.classList.add('bubble');
-                
-                // Random size between 20 and 100px
-                const size = Math.random() * 80 + 20;
-                bubble.style.width = `${size}px`;
-                bubble.style.height = `${size}px`;
-                
-                // Random position
-                bubble.style.left = `${Math.random() * 100}%`;
-                
-                // Random animation duration between 10 and 30 seconds
-                const duration = Math.random() * 20 + 10;
-                bubble.style.animationDuration = `${duration}s`;
-                
-                // Random delay
-                bubble.style.animationDelay = `-${Math.random() * 20}s`;
-                
-                container.appendChild(bubble);
-            }
-            
-            // Create floating shapes
-            for (let i = 0; i < 15; i++) {
-                const element = document.createElement('div');
-                const shapes = ['circle', 'square', 'triangle'];
-                const shape = shapes[Math.floor(Math.random() * shapes.length)];
-                
-                element.classList.add('floating-element', shape);
-                
-                if (shape !== 'triangle') {
-                    const size = Math.random() * 30 + 10;
-                    element.style.width = `${size}px`;
-                    element.style.height = `${size}px`;
-                }
-                
-                // Random position
-                element.style.left = `${Math.random() * 100}%`;
-                
-                // Random animation duration between 15 and 40 seconds
-                const duration = Math.random() * 25 + 15;
-                element.style.animationDuration = `${duration}s`;
-                
-                // Random delay
-                element.style.animationDelay = `-${Math.random() * 30}s`;
-                
-                container.appendChild(element);
-            }
-        }
-
-        // Add parallax scroll effect
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const parallaxBg = document.querySelector('.parallax-bg');
-            
-            // Move background at different speed for parallax effect
-            parallaxBg.style.transform = `translateY(${scrolled * 0.4}px)`;
-            
-            // Move bubbles at different speeds for depth effect
-            const bubbles = document.querySelectorAll('.bubble, .floating-element');
-            bubbles.forEach(bubble => {
-                const speed = parseFloat(bubble.style.animationDuration) / 50;
-                bubble.style.transform = `translateY(${scrolled * speed}px) ${bubble.style.transform.includes('rotate') ? 'rotate(' + (scrolled * speed * 0.1) + 'deg)' : ''}`;
-            });
-        });
-
-        // Menu Toggle
-        function openmenu() {
-            const sidemenu = document.getElementById('sidemenu');
-            sidemenu.classList.add('active');
-        }
-
-        function closemenu() {
-            const sidemenu = document.getElementById('sidemenu');
-            sidemenu.classList.remove('active');
-        }
-
-        // Room Slider
-        function initRoomSlider() {
-            const slideContainer = document.getElementById('slide-container');
-            const slides = document.querySelectorAll('.slide');
-            const dots = document.querySelectorAll('.dot');
-            const prevBtn = document.getElementById('prev-btn');
-            const nextBtn = document.getElementById('next-btn');
-            let currentIndex = 0;
-            const slideCount = slides.length;
-
-            // Function to update slider position
-            function updateSlider() {
-                slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-                
-                // Update dots
-                dots.forEach((dot, index) => {
-                    if (index === currentIndex) {
-                        dot.classList.add('active');
-                    } else {
-                        dot.classList.remove('active');
-                    }
-                });
-            }
-
-            // Next slide
-            nextBtn.addEventListener('click', function() {
-                currentIndex = (currentIndex + 1) % slideCount;
-                updateSlider();
-            });
-
-            // Previous slide
-            prevBtn.addEventListener('click', function() {
-                currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-                updateSlider();
-            });
-
-            // Dot navigation
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', function() {
-                    currentIndex = index;
-                    updateSlider();
-                });
-            });
-
-            // Auto slide
-            setInterval(function() {
-                currentIndex = (currentIndex + 1) % slideCount;
-                updateSlider();
-            }, 5000);
-        }
-
         // Google Sheets Form Submission
         const scriptURL = 'https://script.google.com/macros/s/AKfycbzNCc-ogB6yNRBYRllNN9Hsn0EHe_f2MCyBym96xGcHq52oLu7PUCMxveV4m5DQH7Fw/exec';
         const form = document.forms['contactForm'];
@@ -1563,6 +1304,79 @@
             }
         `;
         document.head.appendChild(style);
+
+        // Menu Toggle
+        function openmenu() {
+            const sidemenu = document.getElementById('sidemenu');
+            sidemenu.classList.add('active');
+        }
+
+        function closemenu() {
+            const sidemenu = document.getElementById('sidemenu');
+            sidemenu.classList.remove('active');
+        }
+
+        // Room Slider
+        document.addEventListener('DOMContentLoaded', function() {
+            const slideContainer = document.getElementById('slide-container');
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            let currentIndex = 0;
+            const slideCount = slides.length;
+
+            // Function to update slider position
+            function updateSlider() {
+                slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+
+            // Next slide
+            nextBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex + 1) % slideCount;
+                updateSlider();
+            });
+
+            // Previous slide
+            prevBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                updateSlider();
+            });
+
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    currentIndex = index;
+                    updateSlider();
+                });
+            });
+
+            // Auto slide
+            setInterval(function() {
+                currentIndex = (currentIndex + 1) % slideCount;
+                updateSlider();
+            }, 5000);
+
+            // Form submission
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will contact you shortly.');
+                contactForm.reset();
+            });
+
+            // Initialize chatbot
+            initChatbot();
+        });
 
         // Chatbot Functionality
         function initChatbot() {
