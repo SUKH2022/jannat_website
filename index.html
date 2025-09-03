@@ -591,6 +591,89 @@
             font-size: 0.7rem;
         }
 
+        /* Branch Gallery */
+        .branch-gallery {
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .gallery-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .gallery-slide img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .gallery-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--light-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .gallery-btn:hover {
+            background: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .gallery-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            gap: 0.5rem;
+        }
+
+        .gallery-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-dot.active {
+            background: var(--primary-color);
+            transform: scale(1.2);
+        }
+
         /* Contact Section */
         #contact {
             padding: 5rem 0;
@@ -1035,7 +1118,7 @@
             <h2 class="sub-title">About JANNAT Girls PG</h2>
             <div class="row">
                 <div class="about-col-1">
-                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXBhcnRtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="JANNAT PG" class="about-img">
+                    <img src="img/sector 31 pg.jpg" alt="JANNAT PG" class="about-img">
                 </div>
                 <div class="about-col-2">
                     <p>Welcome to <span class="highlight">JANNAT Girls PG</span>, where we provide the best accommodation and food facilities for women. Our PG offers a perfect blend of comfort, security, and modern amenities to make your stay enjoyable and memorable.</p>
@@ -1100,7 +1183,7 @@
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJlZHJvb218ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" alt="Double Sharing Room">
+                        <img src="img/Double sharing room in Sushant lok-2.jpg" alt="Double Sharing Room">
                         <div class="slide-overlay">
                             <div class="slide-content">
                                 <h3>Double Sharing Room</h3>
@@ -1111,7 +1194,7 @@
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmVkcm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Triple Sharing Room">
+                        <img src="img/Triple sharing room in sector 31.jpg" alt="Triple Sharing Room">
                         <div class="slide-overlay">
                             <div class="slide-content">
                                 <h3>Triple Sharing Room</h3>
@@ -1150,7 +1233,7 @@
             <div class="branches-container">
                 <div class="branch-card">
                     <div class="branch-img">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXBhcnRtZW50JTIwYnVpbGRpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" alt="Sector 31 Branch">
+                        <img src="img/sector 31 entrance.jpg" alt="Sector 31 Branch Entrance">
                     </div>
                     <div class="branch-info">
                         <h3>Sector 31 Branch</h3>
@@ -1160,13 +1243,58 @@
                             <span>Power Backup</span>
                             <span>Near Metro</span>
                         </div>
-                        <a href="#contact" class="btn">Contact This Branch</a>
+                        
+                        <!-- Sector 31 Gallery -->
+                        <h4 class="gallery-title">Sector 31 Gallery</h4>
+                        <div class="branch-gallery">
+                            <div class="gallery-container" id="sector31-gallery">
+                                <div class="gallery-slide">
+                                    <img src="img/sector 31 entrance.jpg" alt="Sector 31 Entrance">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="img/sector 31 living area.jpg" alt="Sector 31 Living Area">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="img/sector 31 pg.jpg" alt="Sector 31 PG">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="img/sector 31 washroom.jpg" alt="Sector 31 Washroom">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="img/sector 31 washroom-2.jpg" alt="Sector 31 Washroom 2">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="img/Double sharing room in sector 31.jpg" alt="Double Sharing Room Sector 31">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="img/Double sharing room in sector 31 attached washroom.jpg" alt="Double Sharing Room with Attached Washroom Sector 31">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="img/Triple sharing room in sector 31.jpg" alt="Triple Sharing Room Sector 31">
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-nav">
+                                <div class="gallery-btn" id="sector31-prev">
+                                    <i class="fas fa-chevron-left"></i>
+                                </div>
+                                <div class="gallery-btn" id="sector31-next">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-dots" id="sector31-dots">
+                                <!-- Dots will be added dynamically via JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="btn" style="margin-top: 1.5rem;">Contact This Branch</a>
                     </div>
                 </div>
                 
                 <div class="branch-card">
                     <div class="branch-img">
-                        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGFwYXJ0bWVudCUyMGJ1aWxkaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Sushant Lok Branch">
+                        <img src="img/Sushant lok living area.jpg" alt="Sushant Lok Branch Entrance">
                     </div>
                     <div class="branch-info">
                         <h3>Sushant Lok Branch</h3>
@@ -1176,7 +1304,58 @@
                             <span>Common Area</span>
                             <span>Parking</span>
                         </div>
-                        <a href="#contact" class="btn">Contact This Branch</a>
+                        
+                        <!-- Sushant Lok Gallery -->
+                        <h4 class="gallery-title">Sushant Lok Gallery</h4>
+                        <div class="branch-gallery">
+                            <div class="gallery-container" id="sushantlok-gallery">
+                                <div class="gallery-slide">
+                                    <img src="img/Sushant lok entrance.jpg" alt="Sushant Lok Entrance">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="img/Sushant lok living area.jpg" alt="Sushant Lok Living Area">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="img/Sushant lok lobby.jpg" alt="Sushant Lok Lobby">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="img/Sushant lok lobby passage.jpg" alt="Sushant Lok Lobby Passage">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="img/Sushant lok stair way.jpg" alt="Sushant Lok Stair Way">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="img/Sushant lok dinning area.jpg" alt="Sushant Lok Dining Area">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="img/Sushant lok washroom.jpg" alt="Sushant Lok Washroom">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="img/Sushant lok pg.jpg" alt="Sushant Lok PG">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="img/Double sharing room in Sushant lok.jpg" alt="Double Sharing Room Sushant Lok">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="img/Double sharing room in Sushant lok-2.jpg" alt="Double Sharing Room Sushant Lok A">
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-nav">
+                                <div class="gallery-btn" id="sushantlok-prev">
+                                    <i class="fas fa-chevron-left"></i>
+                                </div>
+                                <div class="gallery-btn" id="sushantlok-next">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-dots" id="sushantlok-dots">
+                                <!-- Dots will be added dynamically via JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="btn" style="margin-top: 1.5rem;">Contact This Branch</a>
                     </div>
                 </div>
             </div>
@@ -1336,6 +1515,7 @@
             createBackgroundEffects();
             initRoomSlider();
             initChatbot();
+            initBranchGalleries();
         });
 
         function createBackgroundEffects() {
@@ -1468,6 +1648,69 @@
                 currentIndex = (currentIndex + 1) % slideCount;
                 updateSlider();
             }, 5000);
+        }
+
+        // Initialize Branch Galleries
+        function initBranchGalleries() {
+            // Initialize Sector 31 Gallery
+            initGallery('sector31', 8);
+            
+            // Initialize Sushant Lok Gallery
+            initGallery('sushantlok', 10);
+        }
+
+        function initGallery(branchName, slideCount) {
+            const galleryContainer = document.getElementById(`${branchName}-gallery`);
+            const prevBtn = document.getElementById(`${branchName}-prev`);
+            const nextBtn = document.getElementById(`${branchName}-next`);
+            const dotsContainer = document.getElementById(`${branchName}-dots`);
+            let currentIndex = 0;
+
+            // Create dots
+            for (let i = 0; i < slideCount; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('gallery-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    currentIndex = i;
+                    updateGallery();
+                });
+                dotsContainer.appendChild(dot);
+            }
+
+            const dots = dotsContainer.querySelectorAll('.gallery-dot');
+
+            // Function to update gallery position
+            function updateGallery() {
+                galleryContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+
+            // Next slide
+            nextBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex + 1) % slideCount;
+                updateGallery();
+            });
+
+            // Previous slide
+            prevBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                updateGallery();
+            });
+
+            // Auto slide
+            setInterval(function() {
+                currentIndex = (currentIndex + 1) % slideCount;
+                updateGallery();
+            }, 4000);
         }
 
         // Google Sheets Form Submission
