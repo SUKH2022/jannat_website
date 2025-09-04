@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -194,13 +195,14 @@
         }
 
         .logo {
-            font-family: 'Candlescript', cursive;
-            font-size: 2.5rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
             font-weight: 700;
             background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            text-shadow: 0 0 10px rgba(255, 77, 141, 0.5);
         }
 
         nav ul {
@@ -728,6 +730,7 @@
             display: flex;
             gap: 1rem;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
         .social-icons a {
@@ -818,8 +821,8 @@
         }
 
         .footer-logo {
-            font-family: 'Candlescript', cursive;
-            font-size: 2rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
             font-weight: 700;
             background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
             -webkit-background-clip: text;
@@ -988,6 +991,7 @@
             color: var(--gray-color);
             font-size: 0.9rem;
             padding: 5px 0;
+            display: none;
         }
 
         .typing-dot {
@@ -1069,6 +1073,10 @@
                 padding: 0.8rem 1.8rem;
                 font-size: 1rem;
             }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -1122,7 +1130,7 @@
                 </div>
                 <div class="about-col-2">
                     <p>Welcome to <span class="highlight">JANNAT Girls PG</span>, where we provide the best accommodation and food facilities for women. Our PG offers a perfect blend of comfort, security, and modern amenities to make your stay enjoyable and memorable.</p>
-                    <p>Located in prime locations opposite main markets, we offer easy access to all necessities while maintaining a peaceful environment for our residents.</p>
+                    <p>Located in prime locations near main markets, we offer easy access to all necessities while maintaining a peaceful environment for our residents.</p>
                     
                     <div class="facilities-container">
                         <div class="facility-card">
@@ -1172,12 +1180,12 @@
             <div class="rooms-slider">
                 <div class="slide-container" id="slide-container">
                     <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmVdcm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Single Occupancy Room">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmVkcm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Single Occupancy Room">
                         <div class="slide-overlay">
                             <div class="slide-content">
                                 <h3>Single Occupancy Room</h3>
                                 <p>Spacious single occupancy room with attached bathroom and all modern amenities.</p>
-                                <p class="room-price">₹15,000/month</p>
+                                <p class="room-price">Starting at ₹9,000/month</p>
                                 <a href="#contact" class="btn">Enquire Now</a>
                             </div>
                         </div>
@@ -1188,7 +1196,7 @@
                             <div class="slide-content">
                                 <h3>Double Sharing Room</h3>
                                 <p>Comfortable double sharing accommodation with separate study areas.</p>
-                                <p class="room-price">₹10,000/month</p>
+                                <p class="room-price">Affordable shared options</p>
                                 <a href="#contact" class="btn">Enquire Now</a>
                             </div>
                         </div>
@@ -1199,7 +1207,27 @@
                             <div class="slide-content">
                                 <h3>Triple Sharing Room</h3>
                                 <p>Economical triple sharing rooms with ample storage space.</p>
-                                <p class="room-price">₹8,000/month</p>
+                                <p class="room-price">Budget-friendly options</p>
+                                <a href="#contact" class="btn">Enquire Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/Sushant lok lobby.jpg" alt="Dining Area">
+                        <div class="slide-overlay">
+                            <div class="slide-content">
+                                <h3>Dining Area</h3>
+                                <p>Spacious and clean dining area where nutritious meals are served.</p>
+                                <a href="#contact" class="btn">Enquire Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/treadmill.jpg" alt="Gym Facilities">
+                        <div class="slide-overlay">
+                            <div class="slide-content">
+                                <h3>Fitness Area</h3>
+                                <p>Stay fit with our treadmill and exercise equipment available for residents.</p>
                                 <a href="#contact" class="btn">Enquire Now</a>
                             </div>
                         </div>
@@ -1216,9 +1244,7 @@
                 </div>
                 
                 <div class="slider-dots" id="slider-dots">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
+                    <!-- Dots will be added dynamically via JavaScript -->
                 </div>
             </div>
         </div>
@@ -1237,7 +1263,7 @@
                     </div>
                     <div class="branch-info">
                         <h3>Sector 31 Branch</h3>
-                        <p>Prime location opposite main market, Sector 31, Gurugram</p>
+                        <p>Near Main Market, Sector 31, Gurugram (Near OM SWEET MOTHER DAIRY)</p>
                         <div class="branch-features">
                             <span>24/7 Security</span>
                             <span>Power Backup</span>
@@ -1272,6 +1298,9 @@
                                 <div class="gallery-slide">
                                     <img src="img/Triple sharing room in sector 31.jpg" alt="Triple Sharing Room Sector 31">
                                 </div>
+                                <div class="gallery-slide">
+                                    <img src="img/Sushant lok dinning area.jpg" alt="Dining Area Sector 31">
+                                </div>
                             </div>
                             
                             <div class="gallery-nav">
@@ -1288,7 +1317,12 @@
                             </div>
                         </div>
                         
-                        <a href="#contact" class="btn" style="margin-top: 1.5rem;">Contact This Branch</a>
+                        <a href="https://www.google.com/maps?q=28.4548026,77.051114" target="_blank" class="btn" style="margin-top: 1.5rem; margin-right: 10px;">
+                            <i class="fas fa-map-marker-alt"></i> View on Map
+                        </a>
+                        <a href="#contact" class="btn" style="margin-top: 1.5rem; background: var(--secondary-color); color: var(--dark-color);">
+                            Contact This Branch
+                        </a>
                     </div>
                 </div>
                 
@@ -1298,7 +1332,7 @@
                     </div>
                     <div class="branch-info">
                         <h3>Sushant Lok Branch</h3>
-                        <p>Premium location in Sushant Lok-1, with peaceful surroundings</p>
+                        <p>451-A, Block C, Sushant Lok Phase I, Sector 43, Gurugram, Haryana 122009</p>
                         <div class="branch-features">
                             <span>Mini Gym</span>
                             <span>Common Area</span>
@@ -1339,6 +1373,12 @@
                                 <div class="gallery-slide">
                                     <img src="img/Double sharing room in Sushant lok-2.jpg" alt="Double Sharing Room Sushant Lok A">
                                 </div>
+                                <div class="gallery-slide">
+                                    <img src="img/treadmill.jpg" alt="Gym Equipment Sushant Lok">
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="img/cycle.webp" alt="Exercise Cycle Sushant Lok">
+                                </div>
                             </div>
                             
                             <div class="gallery-nav">
@@ -1355,7 +1395,12 @@
                             </div>
                         </div>
                         
-                        <a href="#contact" class="btn" style="margin-top: 1.5rem;">Contact This Branch</a>
+                        <a href="https://www.google.com/maps/place/28°27'19.4%22N+77°04'55.6%22E/@28.4553889,77.0795362,17z/data=!3m1!4b1!4m4!3m3!8m2!3d28.4553889!4d77.0821111?entry=ttu&g_ep=EgoyMDI1MDkwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn" style="margin-top: 1.5rem; margin-right: 10px;">
+                            <i class="fas fa-map-marker-alt"></i> View on Map
+                        </a>
+                        <a href="#contact" class="btn" style="margin-top: 1.5rem; background: var(--secondary-color); color: var(--dark-color);">
+                            Contact This Branch
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1394,7 +1439,7 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Main Branch Address</h4>
-                            <p>Opposite Main Market, Sector 31, Gurugram, Haryana</p>
+                            <p>Near Main Market, Sector 31, Gurugram, Haryana (Near OM SWEET MOTHER DAIRY)</p>
                         </div>
                     </div>
                     
@@ -1456,10 +1501,6 @@
                         <button type="submit" class="btn">Send Message</button>
                     </form>
                 </div>
-            </div>
-            
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.166132553752!2d77.0522504!3d28.4541822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI3JzE1LjEiTiA3N8KwMDMnMDguMSJF!5e0!3m2!1sen!2sin!4v1624966508789!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </div>
@@ -1603,11 +1644,25 @@
         function initRoomSlider() {
             const slideContainer = document.getElementById('slide-container');
             const slides = document.querySelectorAll('.slide');
-            const dots = document.querySelectorAll('.dot');
+            const dotsContainer = document.getElementById('slider-dots');
             const prevBtn = document.getElementById('prev-btn');
             const nextBtn = document.getElementById('next-btn');
             let currentIndex = 0;
             const slideCount = slides.length;
+
+            // Create dots based on number of slides
+            for (let i = 0; i < slideCount; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    currentIndex = i;
+                    updateSlider();
+                });
+                dotsContainer.appendChild(dot);
+            }
+
+            const dots = dotsContainer.querySelectorAll('.dot');
 
             // Function to update slider position
             function updateSlider() {
@@ -1635,14 +1690,6 @@
                 updateSlider();
             });
 
-            // Dot navigation
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', function() {
-                    currentIndex = index;
-                    updateSlider();
-                });
-            });
-
             // Auto slide
             setInterval(function() {
                 currentIndex = (currentIndex + 1) % slideCount;
@@ -1653,10 +1700,10 @@
         // Initialize Branch Galleries
         function initBranchGalleries() {
             // Initialize Sector 31 Gallery
-            initGallery('sector31', 8);
+            initGallery('sector31', 9);
             
             // Initialize Sushant Lok Gallery
-            initGallery('sushantlok', 10);
+            initGallery('sushantlok', 12);
         }
 
         function initGallery(branchName, slideCount) {
@@ -1822,16 +1869,12 @@
             
             // JANNAT PG knowledge base
             const knowledgeBase = {
-                'rates': `Our room rates are:<br><br>
-                • <strong>Single Occupancy:</strong> ₹15,000/month<br>
-                • <strong>Double Sharing:</strong> ₹10,000/month<br>
-                • <strong>Triple Sharing:</strong> ₹8,000/month<br><br>
-                Prices include all amenities, meals, and utilities.`,
+                'rates': `Our room rates start at ₹9,000/month. For detailed pricing information based on room type and sharing options, please call us at <strong>7042840709</strong> or <strong>8800737400</strong>.`,
                 
                 'facilities': `We offer premium facilities including:<br><br>
                 • <strong>Accommodation:</strong> AC rooms with geyser, LCD TV, box beds, separate almirahs with lockers<br>
                 • <strong>Amenities:</strong> Power backup, CCTV, fridge, induction for self-cooking, washing machine<br>
-                • <strong>Services:</strong> High-speed WiFi, housekeeping, mini gym, common seating area<br>
+                • <strong>Services:</strong> High-speed WiFi, housekeeping, mini gym with treadmill and cycle, common seating area<br>
                 • <strong>Food:</strong> Nutritious and delicious meals served in our dining area`,
                 
                 'booking': `To book a room:<br><br>
@@ -1842,8 +1885,8 @@
                 You can call us at <strong>7042840709</strong> or <strong>8800737400</strong> to schedule a visit.`,
                 
                 'location': `We have two convenient locations:<br><br>
-                <strong>Branch 1:</strong> Opposite Main Market, Sector 31, Gurugram<br>
-                <strong>Branch 2:</strong> Sushant Lok-1, Gurugram<br><br>
+                <strong>Branch 1:</strong> Near Main Market, Sector 31, Gurugram (Near OM SWEET MOTHER DAIRY)<br>
+                <strong>Branch 2:</strong> 451-A, Block C, Sushant Lok Phase I, Sector 43, Gurugram<br><br>
                 Both locations are in prime areas with easy access to markets, transportation, and other amenities.`,
                 
                 'default': `I'm not sure I understand. You can ask me about:<br><br>
