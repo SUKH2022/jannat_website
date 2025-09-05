@@ -191,7 +191,6 @@
             flex-wrap: wrap;
             padding: 1rem 0;
             position: relative;
-            z-index: 10;
         }
 
         .logo {
@@ -247,6 +246,7 @@
             font-size: 1.5rem;
             color: white;
             cursor: pointer;
+            z-index: 101;
         }
 
         .header-text {
@@ -800,6 +800,83 @@
             resize: vertical;
         }
 
+        .payment-options {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .payment-options h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .payment-method {
+            text-align: center;
+            width: 120px;
+        }
+
+        .payment-method img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 10px;
+            background: white;
+            padding: 5px;
+        }
+
+        .payment-method p {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .scanner-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .scanner-section h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .scanner-images {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .scanner-card {
+            width: 150px;
+            text-align: center;
+        }
+
+        .scanner-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+        }
+
+        .scanner-card p {
+            font-size: 0.8rem;
+            color: var(--gray-color);
+        }
+
         .map-container {
             margin-top: 3rem;
             border-radius: 10px;
@@ -896,6 +973,7 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
+            max-height: 320px;
         }
 
         .message {
@@ -1017,26 +1095,27 @@
             }
             
             nav ul {
-                display: none;
                 position: fixed;
                 top: 0;
                 right: -200px;
                 width: 200px;
                 height: 100vh;
-                background: rgba(8, 8, 8, 0.9);
+                background: rgba(8, 8, 8, 0.95);
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                transition: right 0.5s;
+                transition: right 0.5s ease;
                 z-index: 100;
+                padding-top: 50px;
             }
             
             nav ul.active {
                 right: 0;
+                display: flex;
             }
             
             nav ul li {
-                margin: 1rem 0;
+                margin: 1.5rem 0;
             }
             
             .mobile-menu-icon {
@@ -1061,6 +1140,22 @@
             .footer-logo {
                 height: 100px; /* Slightly smaller on mobile */
             }
+
+            .payment-methods {
+                gap: 0.5rem;
+            }
+
+            .payment-method {
+                width: 100px;
+            }
+
+            .scanner-images {
+                gap: 1rem;
+            }
+
+            .scanner-card {
+                width: 130px;
+            }
         }
 
         @media only screen and (max-width: 480px) {
@@ -1084,6 +1179,23 @@
             .footer-logo {
                 height: 100px; /* Adjusted for very small screens */
             }
+
+            .payment-method {
+                width: 80px;
+            }
+
+            .payment-method img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .scanner-card {
+                width: 120px;
+            }
+
+            .scanner-card img {
+                height: 120px;
+            }
         }
     </style>
 </head>
@@ -1105,11 +1217,11 @@
             <nav>
                 <img src="img/logo2.png" alt="JANNAT Logo" class="logo">
                 <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#rooms">Rooms</a></li>
-                    <li><a href="#branches">Branches</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#header" onclick="closemenu()">Home</a></li>
+                    <li><a href="#about" onclick="closemenu()">About</a></li>
+                    <li><a href="#rooms" onclick="closemenu()">Rooms</a></li>
+                    <li><a href="#branches" onclick="closemenu()">Branches</a></li>
+                    <li><a href="#contact" onclick="closemenu()">Contact</a></li>
                     <i class="fa-solid fa-circle-xmark mobile-menu-icon" onclick="closemenu()"></i>
                 </ul>
                 <i class="fa-solid fa-bars mobile-menu-icon" onclick="openmenu()"></i>
@@ -1437,8 +1549,8 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email</h4>
-                            <p>jannatgirlspg@gmail.com</p>
-                            <p>82gurpreet@gmail.com</p>
+                            <p>jannat.the.life@gmail.com</p>
+                            <!-- <p>Ranjitsaini0709@gmail.com</p> -->
                         </div>
                     </div>
                     
@@ -1447,6 +1559,52 @@
                         <div>
                             <h4>Main Branch Address</h4>
                             <p>Near Main Market, Sector 31, Gurugram, Haryana (Near OM SWEET MOTHER DAIRY)</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Options -->
+                    <div class="payment-options">
+                        <h4>Payment Methods Accepted</h4>
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/800px-Visa_Inc._logo.svg.png" alt="Visa">
+                                <p>Visa</p>
+                            </div>
+                            <div class="payment-method">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1000px-Mastercard-logo.svg.png" alt="Mastercard">
+                                <p>Mastercard</p>
+                            </div>
+                            <div class="payment-method">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Pay_Logo.svg/512px-Google_Pay_Logo.svg.png" alt="Google Pay">
+                                <p>Google Pay</p>
+                            </div>
+                            <div class="payment-method">
+                                <img src="img/PhonePe.png" alt="PhonePe">
+                                <p>PhonePe</p>
+                            </div>
+                            <div class="payment-method">
+                                <img src="img/Paytm.jpg" alt="Paytm">
+                                <p>Paytm</p>
+                            </div>
+                            <div class="payment-method">
+                                <img src="img/UPI.png" alt="UPI">
+                                <p>UPI</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Scanner Section -->
+                    <div class="scanner-section">
+                        <h4>Scan for Booking Confirmation</h4>
+                        <div class="scanner-images">
+                            <div class="scanner-card">
+                                <img src="img/scanner.jpg" alt="Scanner 1">
+                                <p>Ranjit Singh Saini's Scanner</p>
+                            </div>
+                            <div class="scanner-card">
+                                <img src="img/scanner2.jpg" alt="Scanner 2">
+                                <p>Gurpreet Singh's Scanner</p>
+                            </div>
                         </div>
                     </div>
                     
@@ -1496,7 +1654,7 @@
                             ">
                                 <option value="" style="background: #080808; color: var(--secondary-color);">Select a branch</option>
                                 <option value="Sector 31" style="background: #080808; color: var(--secondary-color);">Sector 31</option>
-                                <option value="Sushant Lok-1" style="background: #080808; color: var(--secondary-color);">Sushant Lok-1</option>
+                                <option value="Sushant Lok-1" style="background: #080808; color: var(--secondary-color;">Sushant Lok-1</option>
                             </select>
                         </div>
                         
@@ -1636,16 +1794,23 @@
             });
         });
 
-        // Menu Toggle
+        // Menu Toggle - Fixed functionality
         function openmenu() {
             const sidemenu = document.getElementById('sidemenu');
             sidemenu.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
         }
 
         function closemenu() {
             const sidemenu = document.getElementById('sidemenu');
             sidemenu.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
         }
+
+        // Close menu when clicking on links
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', closemenu);
+        });
 
         // Room Slider
         function initRoomSlider() {
