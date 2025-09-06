@@ -76,10 +76,12 @@ Check out the live website: [JANNAT Girls PG Live Demo](https://sukh2022.github.
 The website uses a modern color palette defined in CSS variables:
 ```css
 :root {
-    --primary-color: #ff4d8d;    /* Vibrant pink */
-    --secondary-color: #08fdd8;  /* Electric teal */
-    --accent-color: #ff9e40;     /* Warm orange */
-    --dark-color: #080808;       /* Near black */
-    --light-color: #fefefe;      /* Near white */
-}
+            --primary-color: #660000; /* Deep Burgundy */
+            --secondary-color: #D4AF37; /* Gold/Champagne */
+            --accent-color: #F5F5DC; /* Soft Cream */
+            --dark-color: #080808;
+            --light-color: #fefefe;
+            --gray-color: #ababab;
+            --transition: all 0.3s ease;
+        }
 ```
